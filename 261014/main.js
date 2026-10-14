@@ -18,5 +18,6 @@ console.log(Math.floor(numE));  //302
 console.log("128"+32);
 console.log("33"*"12");
 console.log(187/"13");
+console.log("78"-13);
 
 
