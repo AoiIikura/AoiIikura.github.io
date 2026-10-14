@@ -3,7 +3,7 @@ console.log("夜中の三時とかがいいらしいとか");
 console.log("そういう都市伝説があるらしい");
 //変数に数値を入れて計算
 console.log(33*12);
-console.log(187%13);
+console.log(120%13);
 console.log(78/13);
 //手計算
 let numA =280;
