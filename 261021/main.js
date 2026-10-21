@@ -67,5 +67,23 @@ function welcome2(name, favorite){
   judgeAge(80)
   judgeAge(40)
 
+  //発展
+  function judgeYear(year){
+      let result;
+    if (year % 400 === 0){
+      result = "366日";
+    } else if (year % 100 ===0){
+      result = "365日";
+    } else if (year % 4 ===0){
+      result = "366日";
+    } else {
+      result = "365日";
+    } 
 
+console.log(`${year}年は${result}です`);
+  }
 
+  judgeYear(1892)
+  judgeYear(2008)
+  judgeYear(1040)
+  judgeYear(1005)
