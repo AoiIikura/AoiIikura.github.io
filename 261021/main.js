@@ -54,10 +54,10 @@ function welcome2(name, favorite){
       result = "エラー";
     } else if (age < 18){
       result = "未成年";
-    } else if (age >= 65){
-      result = "高齢者";
-    } else {
+    } else if (18 <= age && age < 65){
       result = "成人";
+    } else {
+      result = "高齢者";
     }
   console.log(`${age}歳は${result}です`);
   }
