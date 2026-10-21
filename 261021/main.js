@@ -10,4 +10,4 @@ console.log(typeof"123");
 console.log(typeof123);
 
 let x;
-console.log(let x;);
+console.log(x);
