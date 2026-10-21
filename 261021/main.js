@@ -29,7 +29,5 @@ function welcome2(name, favorite){
   welcome2("くみこ","チョコレート");
   welcome2("のぐち","オレンジ");
 //引数を渡さず呼び出す
-function greet(name, word){
-  console.log(word +"、" + name + "さん");
-}
-greet();
+  welcome();
+  welcome2();
