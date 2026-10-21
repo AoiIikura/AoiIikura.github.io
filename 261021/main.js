@@ -4,7 +4,6 @@ let num = 5123;
 console.log(name);
 console.log(num);
 
-
 num = 3214;
 console.log(num);
 
@@ -13,6 +12,7 @@ console.log(typeof 123);
 
 let x;
 console.log(x);
+
 
 //演習2
 function welcome(name, word){
@@ -31,3 +31,20 @@ function welcome2(name, favorite){
 //引数を渡さず呼び出す
   welcome();
   welcome2();
+
+  
+  //演習3
+  function multiply(a, b){
+    return a * b;
+  }
+  console.log(multiply(3, 4));
+  console.log(multiply(3, 10));
+//合計金額と人数を受け取り、一人当たりの金額を返す関数
+  function splitBill(total, people){
+      return Math.ceil(total / people);   //端数を切り上げる
+  }
+  console.log(splitBill(3000, 3));
+  console.log(splitBill(5000, 6));
+   
+
+
