@@ -13,10 +13,11 @@ let button2 = document.querySelector("#btn2");
 button2.addEventListener("click", showMessage2);
 
 let count = 0;
-function showMessage3(){
-  let title = document.querySelector("#message");
-  count = count + 1;
-  title.textContent = count;
+function plusCount(){
+  let counter = document.querySelector("#counter");
+  currentCount++;
+  counter.textContent = currentCount;
 }
-let button3 = document.querySelector("#btn3");
-button3.addEventListener("click", showMessage3);
+let currentCount = 0;
+let plus = document.querySelector("#plus");
+plus.addEventListener("click", plusCount);
