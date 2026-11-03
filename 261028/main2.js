@@ -6,7 +6,7 @@ function pickOne(){
 
 function showFavorite(){
   let title = document.querySelector("#message");
-  title.textContent = "pickOne"();
+  title.textContent = pickOne();
 }
 let button  = document.querySelector("#btn");
 button.addEventListener("click", showFavorite);
