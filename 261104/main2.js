@@ -19,6 +19,9 @@ for ( let j = 0; j < character.rarity; j++) {
  characterList.innerHTML += `<li>${character.emoji}${character.name}(${character.type}) 攻撃力 ${character.attack} レアリティ${rarityStars}</li>`;
 }
 
+
+
+
 let sum = 0;
 for (let i = 0; i < characters.length; i++) {
   let character = characters[i];
