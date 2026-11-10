@@ -42,11 +42,21 @@
     }
     .shurui-title {
       width: 100px;
-      margin: 0;
+      margin: 0px;
     }
-    .shurui-buttons {
+    .shurui-buttons-type,.shurui-buttons-rarity{
       display: flex;
       gap: 12px;
+    }
+    .shurui-buttons-type button, .shurui-buttons-rarity button {
+      margin: 2px;
+      padding: 2px 6px;
+      font-size: 12px;
+      border-radius: 10px;
+      border: 1px solid #9c9b9b;
+    }
+    .shurui-buttons-type button{
+      width: 60px;
     }
     .search-sort {
       display: flex;
@@ -61,13 +71,6 @@
     }
     h1 {
       color: #333;
-    }
-    button {
-      margin: 2px;
-      padding: 2px 6px;
-      font-size: 12px;
-      width: 60px;
-      cursor: pointer;    /* カーソルをポインターに変更 */
     }
     input[type="text"] {
       margin: 10px 0;
@@ -94,7 +97,7 @@
   <h1>キャラ図鑑</h1>
   <div class="shurui-filter">
     <p class="shurui-title">タイプ</p>
-    <div class="shurui-buttons">
+    <div class="shurui-buttons-type">
       <button id="showAll">すべて</button>
       <button id="showFire">炎</button>
       <button id="showWater">水</button>
@@ -104,12 +107,12 @@
 
   <div class="shurui-filter">
     <p class="shurui-title">レアリティ</p>
-    <div class="shurui-buttons">
-      <button id="showRarity1">★</button>
-      <button id="showRarity2">★★</button>
-      <button id="showRarity3">★★★</button>
-      <button id="showRarity4">★★★★</button>
+    <div class="shurui-buttons-rarity">
       <button id="showRarity5">★★★★★</button>
+      <button id="showRarity4">★★★★</button>
+      <button id="showRarity3">★★★</button>
+      <button id="showRarity2">★★</button>
+      <button id="showRarity1">★</button>
     </div>  
   </div>
 <!-- 検索ボックス -->
