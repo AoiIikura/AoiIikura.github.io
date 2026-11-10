@@ -14,16 +14,19 @@
       line-height: 2.0;     /*行間の調整*/
       font-size: 16px;
       font-weight: 300;   /*文字の太さ*/
+      margin: 20px;
     }
     #characterList {
       display: flex;
       flex-wrap: wrap;    /* 入らなかったら折り返す */
       gap: 10px;      /* カード間の隙間 */
+      border-top: 2px solid #afaeae;     
+      padding-top: 20px;    
     }
     .character-card {
       width: 150px;
-      border: 1px solid #ccc;
-      border-radius: 5px;     /* 角丸の半径 */
+      border: 2px solid #ccc;
+      border-radius: 12px;     /* 角丸の半径 */
       padding: 10px;
       margin-bottom: 10px;
       text-align: center;
@@ -38,21 +41,45 @@
       gap: 10px;
     }
     .shurui-title {
-      width: 160px;
+      width: 100px;
       margin: 0;
     }
     .shurui-buttons {
       display: flex;
       gap: 12px;
     }
+    .search-sort {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    #count {
+    font-size: 15px;
+    text-align: right;
+    color: #555;
+    }
     h1 {
       color: #333;
     }
     button {
-      margin: 4px;
+      margin: 2px;
       padding: 2px 6px;
       font-size: 12px;
-      cursor: pointer;
+      width: 60px;
+      cursor: pointer;    /* カーソルをポインターに変更 */
+    }
+    input[type="text"] {
+      margin: 10px 0;
+      padding: 5px;
+      width: 600px;
+      font-size: 14px;
+    }
+    select {
+      margin: 10px 0;
+      padding: 5px;
+      font-size: 14px;
+      width: 250px;
     }
     ul {
       list-style-type: none;
@@ -71,23 +98,36 @@
       <button id="showAll">すべて</button>
       <button id="showFire">炎</button>
       <button id="showWater">水</button>
-      <button id="showLightning">草</button>
+      <button id="showGrass">草</button>
     </div>
   </div>
 
   <div class="shurui-filter">
     <p class="shurui-title">レアリティ</p>
     <div class="shurui-buttons">
-      <button id="showRarity1">★1</button>
-      <button id="showRarity2">★2</button>
-      <button id="showRarity3">★3</button>
-      <button id="showRarity4">★4</button>
-      <button id="showRarity5">★5</button>
+      <button id="showRarity1">★</button>
+      <button id="showRarity2">★★</button>
+      <button id="showRarity3">★★★</button>
+      <button id="showRarity4">★★★★</button>
+      <button id="showRarity5">★★★★★</button>
     </div>  
   </div>
 <!-- 検索ボックス -->
-  <input type="text" id="searchInput" placeholder="キャラクター名で検索">
+ <div class="search-sort">
+    <input type="text" id="searchInput" placeholder="キャラクター名で検索">
 
+  <div>
+    <select id="sortSelect">
+      <option value="default">標準</option>
+      <option value="nameAsc">名前順 (昇順)</option>
+      <option value="nameDesc">名前順 (降順)</option>
+      <option value="attackAsc">攻撃力順 (昇順)</option>
+      <option value="attackDesc">攻撃力順 (降順)</option>
+    </select>
+  </div>
+ </div>
+
+  <p id="count"></p>
   <ul id="characterList"></ul>
   <script src="https://morimorihoge.github.io/teu2026f/characters.js"></script>
   <script src="main.js"></script>
