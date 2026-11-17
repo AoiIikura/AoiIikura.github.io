@@ -10,7 +10,7 @@ function showType(type) {
         rarityStars += "★";
       }
       let imageTag = `<img src="${character.image}" width="80">`;
-      characterList.innerHTML += `<li class="character-card">${imageTag} <h3>${character.emoji}${character.name}</h3><p>${character.type} / 攻撃力 ${character.attack}</p><p>${rarityStars}</p></li>`;
+      characterList.innerHTML += `<li class="character-card">${imageTag} <h3>${character.name}</h3><p>${character.type} / 攻撃力 ${character.attack}</p><p>${rarityStars}</p></li>`;
     }
   }
 }
@@ -26,22 +26,17 @@ function showRarity(rarity) {
       }
       let imageTag = `<img src="${character.image}" width="80">`;
 
-      characterList.innerHTML += `<li class="character-card">${imageTag} <h3>${character.emoji}${character.name}</h3><p>${character.type} / 攻撃力 ${character.attack}</p><p>${rarityStars}</p></li>`;
+      characterList.innerHTML += `<li class="character-card">${imageTag} <h3>${character.name}</h3><p>${character.type} / 攻撃力 ${character.attack}</p><p>${rarityStars}</p></li>`;
     }
   }
 }
 
-let selectedType = "すべて"; // 選んでいるタブ
-let selectedRarity = "すべて"; // 選んでいるレアリティ
-let searchWord = ""; // 検索欄の文字
+let selectedType = "すべて"; 
+let selectedRarity = "すべて"; 
+let searchWord = ""; 
 let selectedSort = "default"; 
 
-let sortSelect = document.querySelector("#sortSelect");
-sortSelect.addEventListener("change", function() {    //変更刺されたときに実行する処理
-  selectedSort = sortSelect.value;
-  render();
-});
-
+//選択したタイプ、レアと名前をもとにキャラを絞る
 function render() {
   let visibleCharacters = []; // 表示するキャラを集める
   for (let i = 0; i < characters.length; i++) {
@@ -54,29 +49,39 @@ function render() {
       }
    }
 
-  if (selectedSort === "nameAsc") {
-  visibleCharacters.sort(function(a, b) {
-    return a.name.localeCompare(b.name); // 名前順 (昇順)
-  });
-} else if (selectedSort === "nameDesc") {
-  visibleCharacters.sort(function(a, b) {
-    return b.name.localeCompare(a.name); // 名前順 (降順)
-  });
-} else if (selectedSort === "attackAsc") {
-  visibleCharacters.sort(function(a, b) {
-    return a.attack - b.attack; // 攻撃力順 (昇順)
-  });
-} else if (selectedSort === "attackDesc") {
-  visibleCharacters.sort(function(a, b) {
-    return b.attack - a.attack; // 攻撃力順 (降順)    
-  });
-}
 
+
+
+//並び替え
+if (selectedSort === "attackAsc") {
+  visibleCharacters.sort((a, b) => a.attack - b.attack);
+} else if (selectedSort === "attackDesc") {
+  visibleCharacters.sort((a, b) => b.attack - a.attack);
+}else if(selectedSort === "rarityDesc") {
+  visibleCharacters.sort((a, b) => b.rarity - a.rarity);
+}
 
   characterList.innerHTML = "";    // いったん空にする
 
+//並び替えの選択肢が変更されたとき
+let sortSelect = document.querySelector("#sortSelect");
+sortSelect.addEventListener("change", function() {   
+  selectedSort = sortSelect.value;
+  render();
+});
+
+// 検索欄
+let searchInput = document.querySelector("#searchInput");
+searchInput.addEventListener("input", function() {
+  searchWord = searchInput.value;
+  render();
+});
+
+
+//件数表示し、検索結果に応じてキャラを表示する
   let count = document.querySelector("#count");
   count.textContent = `${characters.length}件中 ${visibleCharacters.length}件を表示`; // 件数を表示
+
   if (visibleCharacters.length === 0) {         //0件のときの表示
     characterList.textContent = "見つかりませんでした";
   } else {
@@ -87,11 +92,15 @@ function render() {
     rarityStars += "★";
       }
     let imageTag = `<img src="${character.image}" width="80">`;
-    characterList.innerHTML += `<li class="character-card">${imageTag} <h3>${character.emoji}${character.name}</h3><p>${character.type} / 攻撃力 ${character.attack}</p><p>${rarityStars}</p></li>`;
+    characterList.innerHTML += `<li class="character-card">${imageTag} <h3>${character.name}</h3><p>${character.type} / 攻撃力 ${character.attack}</p><p>${rarityStars}</p></li>`;
     }
   }
 }
 
+
+
+
+//ボタンをつなげてる
 function showType(type) {
   selectedType = type;
   selectedRarity = "すべて"; // レアリティの選択をリセット
@@ -103,63 +112,35 @@ function showRarity(rarity) {
   render();
 }
 
-// 検索欄
-let searchInput = document.querySelector("#searchInput");
-searchInput.addEventListener("input", function() {
-  searchWord = searchInput.value;
-  render();
+let typeTabs = document.querySelectorAll(".type-tab");
+typeTabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    let type = tab.textContent;
+    showType(type);
+  });
 });
-// 最初の表示
+let rarityTabs = document.querySelectorAll(".rarity-tab");
+rarityTabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    let rarity = tab.textContent.length;
+    showRarity(rarity);
+  });
+});
+
+
+//選択したボタンに色を付ける
+let buttons = document.querySelectorAll(".type-tab,.rarity-tab");
+
+buttons.forEach(function(button) {
+  button.addEventListener("click", function() {      //ボタンがクリックされたときに処理を実行
+    buttons.forEach(function(btn) {
+    btn.classList.remove("btn-info");     //ボタンについていたativeが消去される
+    btn.classList.add("btn-default");
+  });
+    button.classList.remove("btn-default");   //色を変える役割。実際にクリックされたボタンを指すからbutton
+    button.classList.add("btn-info");
+  });
+});
+
 render();
-
-function showAll() {
-  showType("すべて");
-}
-function showFire() {
-  showType("炎");
-}
-function showWater() {
-  showType("水");
-}
-function showGrass() {
-  showType("草");
-}
-function showRarity1() {
-  showRarity(1);
-}
-function showRarity2() {
-  showRarity(2);
-}
-function showRarity3() {
-  showRarity(3);
-}
-function showRarity4() {
-  showRarity(4);
-}
-function showRarity5() {
-  showRarity(5);
-}
-
-
-let showAllButton = document.querySelector("#showAll");
-let showFireButton = document.querySelector("#showFire");
-let showWaterButton = document.querySelector("#showWater");
-let showGrassButton = document.querySelector("#showGrass");
-let showRarity1Button = document.querySelector("#showRarity1");
-let showRarity2Button = document.querySelector("#showRarity2");
-let showRarity3Button = document.querySelector("#showRarity3");
-let showRarity4Button = document.querySelector("#showRarity4");
-let showRarity5Button = document.querySelector("#showRarity5");
-
-showAllButton.addEventListener("click", showAll);
-showFireButton.addEventListener("click", showFire);
-showWaterButton.addEventListener("click", showWater);
-showGrassButton.addEventListener("click", showGrass);
-showRarity1Button.addEventListener("click", showRarity1);
-showRarity2Button.addEventListener("click", showRarity2);
-showRarity3Button.addEventListener("click", showRarity3);
-showRarity4Button.addEventListener("click", showRarity4);
-showRarity5Button.addEventListener("click", showRarity5);
-
-
 
