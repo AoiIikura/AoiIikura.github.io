@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>実践的Web開発中間課題</title>
+
+  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: "Noto Sans JP",sans-serif;
+      color: #000000;
+      background-color: #f9f8f8;
+      line-height: 2.5;     /*行間の調整*/
+      font-size: 16px;
+      font-weight: 300;   /*文字の太さ*/
+      margin: 20px;
+    }
+    h1{
+      margin-bottom: 20px;
+    }
+    #characterList {
+      display: flex;
+      flex-wrap: wrap;    /* 入らなかったら折り返す */
+      gap: 10px;      /* カード間の隙間 */
+      border-top: 2px solid #afaeae;     
+      padding-top: 20px;    
+    }
+    .character-card {
+      width: 150px;
+      border: 2px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      line-height: 2.0; 
+      text-align: center;
+      background-color: #fff;
+    }
+    .character-card h3{
+      font-size: 14px;
+      margin: 5px 0;
+    }
+    #count {
+    font-size: 15px;
+    text-align: right;
+    color: #555;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    </style>
+</head>
+
+<body>
+  <h1>キャラ図鑑</h1>
+
+  <div class="form-group">
+    <lavel>タイプ</lavel>
+      <button class="btn btn-outline-secondary type-tab">すべて</button>
+      <button class="btn btn-outline-secondary type-tab">炎</button>
+      <button class="btn btn-outline-secondary type-tab">水</button>
+      <button class="btn btn-outline-secondary type-tab">草</button>
+  </div>
+
+  <div class="form-group">
+    <label>レアリティ</label>
+      <button class="btn btn-outline-secondary rarity-tab">★★★★★</button>
+      <button class="btn btn-outline-secondary rarity-tab">★★★★</button>
+      <button class="btn btn-outline-secondary rarity-tab">★★★</button>
+      <button class="btn btn-outline-secondary rarity-tab">★★</button>
+      <button class="btn btn-outline-secondary rarity-tab">★</button> 
+  </div>
+
+<!-- 検索ボックス -->
+ <div class="row mb-2">
+  <div class="col-md-6">
+    <input type="text" id="searchInput" class="form-control" placeholder="キャラクター名で検索">
+  </div>
+
+  <div class="col-md-3">
+    <select id="sortSelect" class="form-select">
+      <option value="default">登録順</option>
+      <option value="attackDesc">攻撃力が高い順</option>
+      <option value="attackAsc">攻撃力が低い順</option>
+      <option value="rarityDesc">レア度が高い順</option>
+    </select>
+  </div>
+ </div>
+
+  <p id="count"></p>
+  <ul id="characterList"></ul>
+  <script src="main.js"></script>
+</body>
+</html>
