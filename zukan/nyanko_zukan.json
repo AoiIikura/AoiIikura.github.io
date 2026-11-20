@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "ネコ",
+    "rarity": "基本",
+    "hp": null,
+    "attack": null,
+    "description": "低コストで生産できる基本キャラクター。",
+    "image": "images/cat_1.png"
+  },
+  {
+    "id": 2,
+    "name": "タンクネコ",
+    "rarity": "基本",
+    "hp": null,
+    "attack": null,
+    "description": "体力が高く、味方を守る壁役に向いている。",
+    "image": "images/tank_cat_1.png"
+  },
+  {
+    "id": 3,
+    "name": "バトルネコ",
+    "rarity": "基本",
+    "hp": null,
+    "attack": null,
+    "description": "赤い敵との戦いを得意とする近距離キャラクター。",
+    "image": "images/battle_cat_1.png"
+  },
+  {
+    "id": 4,
+    "name": "キモネコ",
+    "rarity": "基本",
+    "hp": null,
+    "attack": null,
+    "description": "射程が長めの攻撃を行うキャラクター。",
+    "image": "images/gross_cat_1.png"
+  },
+  {
+    "id": 5,
+    "name": "ウシネコ",
+    "rarity": "基本",
+    "hp": null,
+    "attack": null,
+    "description": "移動速度と攻撃頻度が高いキャラクター。",
+    "image": "images/cow_cat_1.png"
+  },
+  {
+    "id": 6,
+    "name": "ネコノトリ",
+    "rarity": "基本",
+    "hp": null,
+    "attack": null,
+    "description": "範囲攻撃ができるキャラクター。",
+    "image": "images/bird_cat_1.png"
+  },
+  {
+    "id": 7,
+    "name": "ネコフィッシュ",
+    "rarity": "基本",
+    "hp": null,
+    "attack": null,
+    "description": "体力と攻撃力を持つ近距離キャラクター。",
+    "image": "images/fish_cat_1.png"
+  },
+  {
+    "id": 8,
+    "name": "ネコトカゲ",
+    "rarity": "基本",
+    "hp": null,
+    "attack": null,
+    "description": "長い射程から攻撃できるキャラクター。",
+    "image": "images/lizard_cat_1.png"
+  },
+  {
+    "id": 9,
+    "name": "巨神ネコ",
+    "rarity": "基本",
+    "hp": null,
+    "attack": null,
+    "description": "攻撃力と体力が高い大型キャラクター。",
+    "image": "images/ titan_cat_1.png"
+  },
+  {
+    "id": 10,
+    "name": "ネコ女優",
+    "rarity": "EX",
+    "hp": null,
+    "attack": null,
+    "description": "広い範囲を攻撃できるEXキャラクター。",
+    "image": "images/actress_cat_1.png"
+  },
+  {
+    "id": 11,
+    "name": "カンフーにゃんこ",
+    "rarity": "EX",
+    "hp": null,
+    "attack": null,
+    "description": "強力な範囲攻撃を行うEXキャラクター。",
+    "image": "images/kung_fu_cat_1.png"
+  },
+  {
+    "id": 12,
+    "name": "ネコ忍者",
+    "rarity": "EX",
+    "hp": null,
+    "attack": null,
+    "description": "素早い攻撃が特徴のEXキャラクター。",
+    "image": "images/ninja_cat_1.png"
+  },
+  {
+    "id": 13,
+    "name": "スモウネコ",
+    "rarity": "EX",
+    "hp": null,
+    "attack": null,
+    "description": "前線で敵の攻撃を受ける役割に向いている。",
+    "image": "images/sumo_cat_1.png"
+  },
+  {
+    "id": 14,
+    "name": "ネコゾンビ",
+    "rarity": "EX",
+    "hp": null,
+    "attack": null,
+    "description": "個性的な性能を持つEXキャラクター。",
+    "image": "images/zombie_cat_1.png"
+  },
+  {
+    "id": 15,
+    "name": "ネコフィーバー",
+    "rarity": "EX",
+    "hp": null,
+    "attack": null,
+    "description": "EXランクの基本的なキャラクター。",
+    "image": "images/fever_cat_1.png"
+  },
+  {
+    "id": 16,
+    "name": "ネコヴァルキリー",
+    "rarity": "EX",
+    "hp": null,
+    "attack": null,
+    "description": "高い攻撃性能を持つ大型EXキャラクター。",
+    "image": "images/valkyrie_cat_1.png"
+  },
+  {
+    "id": 17,
+    "name": "ネコムート",
+    "rarity": "EX",
+    "hp": null,
+    "attack": null,
+    "description": "強力な一撃を放つ大型EXキャラクター。",
+    "image": "images/muto_cat_1.png"
+  },
+  {
+    "id": 18,
+    "name": "ネコホッピング",
+    "rarity": "レア",
+    "hp": null,
+    "attack": null,
+    "description": "移動や前線維持に特徴を持つレアキャラクター。",
+    "image": "images/hopping_cat_1.png"
+  },
+  {
+    "id": 19,
+    "name": "ネコエステ",
+    "rarity": "レア",
+    "hp": null,
+    "attack": null,
+    "description": "範囲攻撃ができるレアキャラクター。",
+    "image": "images/salon_cat_1.png"
+  },
+  {
+    "id": 20,
+    "name": "ネコファイター",
+    "rarity": "レア",
+    "hp": null,
+    "attack": null,
+    "description": "赤い敵との戦いを得意とするレアキャラクター。",
+    "image": "images/fighter_cat_1.png"
+  }
+]

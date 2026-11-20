@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>にゃんこ大戦争 図鑑</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>にゃんこ大戦争 キャラクター図鑑</h1>
+
+  <div id="characterList"></div>
+
+  <script>
+    let characterList = document.querySelector("#characterList");
+
+    // JSONファイルを読み込む
+    fetch("nyanko_zukan.json")
+      .then(response => response.json())
+      .then(characters => {
+        showCharacters(characters);
+      })
+      .catch(error => {
+        console.log("データの読み込みに失敗しました", error);
+      });
+
+    // キャラクターを表示する
+    function showCharacters(characters) {
+      characterList.innerHTML = "";
+
+      for (let i = 0; i < characters.length; i++) {
+        let character = characters[i];
+
+        let card = `
+          <div class="character-card">
+            <img src="${character.image}" alt="${character.name}">
+            <h2>${character.name}</h2>
+            <p>レア度：${character.rarity}</p>
+            <p>${character.description}</p>
+          </div>
+        `;
+
+        characterList.innerHTML += card;
+      }
+    }
+  </script>
+
+</body>
+</html>
